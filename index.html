@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather</title>
+    <!--Primary Meta Tags-->
+    <meta name="title" content="Weather">
+    <meta name="description" content="weather app made by Samuel">
+    <!--Adding Favicon-->
+    <link rel="shortcut icon" href="favicon.svg" type="image/svg+xml">
+<!--Applying Google Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <!--Linking Stylesheet-->
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <!-- Linking JS-->
+    <script src="./assets/js/app.js" type="module"></script>
+    <script src="./assets/js/route.js" type="module"></script>
+</head>
+<body>
+  <!--Header-->
+  <header class="header">
+    <div class="container">
+       <a href="#" class="logo">
+        <img src="./assets/images/logo.png" width="364" height="58" alt="logo">
+       </a> 
+       <div class="search-view" data-search-view>
+        <div class="search-wrapper">
+            <input type="search" name="search" placeholder="Search City..." autocomplete="off" class="search-field" data-search-field>
+            <span class="m-icon leading-icon">search</span>
+            <button class="icon-btn leading-icon has-state" aria-label="close search" data-search-toggler>
+                <span class="m-icon">arrow_back</span> 
+            </button>
+           </div>
+           <div class="search-result" data-search-result>
+            <ul class="view-list" data-search-list>
+                <li class="view-item">
+                    <span class="m-icon">Location_on</span>
+                    <div>
+                        <p class="item-title">London</p>
+                        <p class="label-2 item-subtitle">State of London, GB</p>
+                    </div>
+                    <a href="#" class="item-link has-state" data-search-toggler></a>             
+                </li>
+    
+            </ul>
+           </div> 
+        </div>
+        <div class="header-actions">
+            <button class="icon-btn has-state" aria-label="open-search" data-search-toggler>
+                <span class="m-icon">search</span>
+            </button>
+            <a href="#/current-location" class="btn-primary has-state" data-current-location-btn>
+                <span class="m-icon">my_location</span>
+                <span class="span">Current Location</span>
+            </a>
+        </div>
+    </div>
+  </header>
+    <main>
+        <article class="container" data-container>
+          <div class="content-left">
+            <!--Current Weather-->
+            <section class="section current-weather" aria-label="current weather" data-current-weather>
+            <!--The aria-label attribute is used to define a string that labels the current element, which can be useful for accessibility tools like screen readers. Here, it's labeling the section as "current weather".
+            The data-* attribute is a custom attribute that stores extra information not covered by other attributes. It's used to store private custom data for the page or application. Here, it's storing data related to the "current weather". The actual data would be stored in JavaScript and accessed using this attribute.-->
+            </section>
+        <!--FORECAST-->
+        <section class="section forecast" aria-labelledby="forecast-label" data-5-day-forecast></section>
+          </div>
+          <div class="content-right">
+            <!--HIGHLIGHTS-->
+            <section class="section highlights" aria-labelledby="highlights-label" data-highlights></section>
+            <!--HOURLY FORECAST-->
+            <section class="section hourly-forecast" aria-label="hourly-forecast" data-hourly-forecast></section>
+            <!--FOOTER-->
+          <footer class="footer">
+            <p class="body-3">
+                Copyright 2024 Samuel. All Rights Reserved.
+            </p>
+            <p class="body-3">
+                Powered By <a href="https://openweathermap.org/api" title="Free OpenWeather API" traget="_blank" rel="noopnener"><img src="/assets/images/openweather.png" width="150" height="30" loading="lazy" alt="OpenWeather" alt=""></a>
+            </p>
+          </footer>
+          </div>
+          <div class="loading" data-loading></div>
+
+        </article>
+    </main>
+    <!--ERROR 404-->
+    <section class="error-content" data-error-content>
+        <h2 class="heading">404</h2>
+        <p class="body-1">Page Not Found!</p>
+        <a href="#/weather?lat=51.509865&lon=-0.118092" class="btn-primary">
+            <span class="m-icon">home</span>
+            <span class="span">Go Home</span>
+        </a>
+    </section>
+</body>
+</html>
